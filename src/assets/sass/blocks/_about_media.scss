@@ -1,0 +1,65 @@
+@media (max-width: 1240px) {
+  .about {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .about {
+    background: url("../images/bg/aboutBG.png") top (200% / cover) no-repeat;
+    &__photo {
+      width: 46rem;
+      height: 23rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 0.5rem;
+
+    background: url("../images/bg/altBG.png") left 5% no-repeat;
+    &__media {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__logo {
+      display: none;
+    }
+    &__photo {
+      padding: 0;
+      width: 10rem;
+      height: 15rem;
+    }
+    &__content {
+      text-align: center;
+      margin-left: 1rem;
+      &-title {
+        margin-top: 1rem;
+      }
+      &-descr {
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+      &-cv {
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 0.3rem;
+        width: 5.3rem;
+        height: 1.7rem;
+        line-height: 135%;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .about {
+    &__photo {
+      padding: 0;
+      width: 8rem;
+      height: 12rem;
+    }
+  }
+}

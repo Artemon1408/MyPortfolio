@@ -1,0 +1,20 @@
+@media (max-width: 1240px) {
+  .promo {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .promo {
+    padding-left: 0;
+    &__title {
+      text-align: center;
+    }
+    &__subtitle {
+      text-align: center;
+    }
+    &__social {
+      justify-content: center;
+    }
+  }
+}
