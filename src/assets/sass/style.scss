@@ -1,0 +1,45 @@
+@import "libs/bootstrap-reboot.min.scss";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+@import "libs/fonts";
+
+* {
+  font-family: "Spartan", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@import "blocks/promo";
+@import "blocks/header";
+@import "blocks/scroll";
+@import "blocks/about";
+@import "blocks/skills";
+@import "blocks/works";
+@import "blocks/footer";
+
+@import "blocks/promo_media";
+@import "blocks/header_media";
+@import "blocks/scroll_media";
+@import "blocks/about_media";
+@import "blocks/skills_media";
+@import "blocks/works_media";
+@import "blocks/footer_media";
+
+@media all, (min-height: 569px) and (orientation: landscape) {
+  .promo,
+  .about,
+  .skills,
+  .works,
+  .footer {
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,107 @@
+@media (max-width: 1240px) {
+  .skills {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 1010px) {
+  .skills {
+    &__content {
+      &-title {
+        text-align: center;
+      }
+      &-descr {
+        text-align: center;
+      }
+    }
+    &__media {
+      &-photo {
+        width: 18rem;
+        height: 25rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .skills {
+    &__content {
+      &-title {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+      }
+      &-descr {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 0.5rem;
+    background: url("../images/bg/altBG.png") left 5% no-repeat;
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+    &__content {
+      &-diagrams {
+        padding-left: 1.5rem;
+      }
+    }
+    &__media {
+      margin: 0 auto;
+      &-photo {
+        width: 10rem;
+        height: 15rem;
+      }
+      &-logo {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 667px) {
+  .skills {
+    &__wrapper {
+      padding-top: 0.5rem;
+    }
+    &__content {
+      &-title {
+        margin-top: 0;
+      }
+      &-descr {
+        margin-top: 0.2rem;
+      }
+      &-diagrams {
+        margin-top: 0;
+      }
+      &-diagram {
+        div {
+          padding-right: 1.7rem;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  #HTML5,
+  #CSS3,
+  #JavaScript,
+  #ReactJS,
+  #Redux {
+    width: 7.7rem;
+    height: 3.7rem;
+  }
+}
+
+@media (max-height: 568px) {
+  .skills {
+    &__content {
+      &-diagrams {
+        display: none;
+      }
+    }
+  }
+}
