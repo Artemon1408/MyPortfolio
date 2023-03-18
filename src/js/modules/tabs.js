@@ -4,6 +4,7 @@ const tabs = (
   tabSelector,
   contentSelector,
   activeClass,
+
   display = "flex"
 ) => {
   const header = document.querySelector(headerSelector),

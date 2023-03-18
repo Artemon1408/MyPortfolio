@@ -300,7 +300,9 @@ __webpack_require__.r(__webpack_exports__);
 const slider = (slides, next) => {
   let slideIndex = 1;
   const items = document.querySelectorAll(slides),
-    dots = document.querySelectorAll(".works__sliderDots-dot");
+    dots = document.querySelectorAll(".works__sliderDots-dot"),
+    headerTab = document.querySelector(".header__menu"),
+    tab = document.querySelectorAll(".header__menu-link");
   function showSlides(n) {
     if (n > items.length) {
       slideIndex = 1;
@@ -331,6 +333,17 @@ const slider = (slides, next) => {
       });
       dots[0].classList.add("dot-active");
     } catch (e) {}
+    try {
+      headerTab.addEventListener("click", e => {
+        const target = e.target;
+        tab.forEach((item, i) => {
+          if (target == item || target.parentNode == item) {
+            slideIndex += i;
+          }
+        });
+      });
+    } catch (e) {}
+    console.log(slideIndex);
   }
   showSlides(slideIndex);
   function plusSlides(n) {
