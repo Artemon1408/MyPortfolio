@@ -24,6 +24,7 @@
         height: 100%;
         object-fit: cover;
         &:hover {
+          transition: all 0.5s;
           filter: drop-shadow(1rem 1rem 1.2rem #f44336);
         }
       }
@@ -56,7 +57,7 @@
       color: #f44336;
     }
     &-descr {
-      height: 6.9rem;
+      min-height: 12rem;
       margin-top: 1.5rem;
       font-style: normal;
       font-weight: 400;
@@ -94,6 +95,7 @@
         width: 100%;
         height: 100%;
         &:hover {
+          transition: all 0.5s;
           fill: #f44336;
         }
       }
