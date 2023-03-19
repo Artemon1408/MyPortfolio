@@ -103,5 +103,24 @@
         height: 12rem;
       }
     }
+    &__content {
+      &-technology {
+        display: none;
+      }
+      &-title {
+        margin-top: 0.5rem;
+      }
+      &-subtitle {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+      &-descr {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+      &-link {
+        display: none;
+      }
+    }
   }
 }

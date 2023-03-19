@@ -1,5 +1,15 @@
+@media (max-width: 1305px) {
+  .footer {
+    &__wrapper {
+      width: 90%;
+    }
+  }
+}
 @media (max-width: 1200px) {
   .footer {
+    &__wrapper {
+      width: 90%;
+    }
     &__form {
       &-input,
       &-inputArea {
@@ -48,8 +58,13 @@
 
 @media (max-width: 575px) {
   .footer {
+    &__content {
+      height: 100vh;
+    }
     &__wrapper {
-      margin: 1.5rem;
+      margin: 2.5rem;
+
+      width: 85%;
       min-height: 25.25rem;
     }
     &__descr {
@@ -58,6 +73,15 @@
     &__form {
       flex-basis: 100%;
       align-items: center;
+    }
+    &__social {
+      display: none;
+    }
+    &__links {
+      display: none;
+    }
+    .footer-scroll {
+      display: block;
     }
   }
 }
