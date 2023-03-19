@@ -98,10 +98,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_burgermenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/burgermenu */ "./src/js/modules/burgermenu.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/forms */ "./src/js/modules/forms.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabs */ "./src/js/modules/tabs.js");
+
 
 
 
 window.addEventListener("DOMContentLoaded", () => {
+  Object(_modules_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])(".header__menu", ".header__menu-link", "section", "animate__fadeIn");
   Object(_modules_burgermenu__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])("section", ".scroll");
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])(".works__wrapper", ".works__media-btn");
@@ -297,7 +300,9 @@ __webpack_require__.r(__webpack_exports__);
 const slider = (slides, next) => {
   let slideIndex = 1;
   const items = document.querySelectorAll(slides),
-    dots = document.querySelectorAll(".works__sliderDots-dot");
+    dots = document.querySelectorAll(".works__sliderDots-dot"),
+    headerTab = document.querySelector(".header__menu"),
+    tab = document.querySelectorAll(".header__menu-link");
   function showSlides(n) {
     if (n > items.length) {
       slideIndex = 1;
@@ -328,6 +333,17 @@ const slider = (slides, next) => {
       });
       dots[0].classList.add("dot-active");
     } catch (e) {}
+    try {
+      headerTab.addEventListener("click", e => {
+        const target = e.target;
+        tab.forEach((item, i) => {
+          if (target == item || target.parentNode == item) {
+            slideIndex += i;
+          }
+        });
+      });
+    } catch (e) {}
+    console.log(slideIndex);
   }
   showSlides(slideIndex);
   function plusSlides(n) {
@@ -374,6 +390,59 @@ const slider = (slides, next) => {
   } catch (e) {}
 };
 /* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ }),
+
+/***/ "./src/js/modules/tabs.js":
+/*!********************************!*\
+  !*** ./src/js/modules/tabs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _progresBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./progresBar */ "./src/js/modules/progresBar.js");
+
+const tabs = function (headerSelector, tabSelector, contentSelector, activeClass) {
+  let display = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : "flex";
+  const header = document.querySelector(headerSelector),
+    tab = document.querySelectorAll(tabSelector),
+    content = document.querySelectorAll(contentSelector);
+  function hideTabContent() {
+    content.forEach(item => {
+      item.style.display = "none";
+      item.classList.add("animate__animated");
+      item.classList.remove(activeClass);
+    });
+  }
+  function showTabContent() {
+    let i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    content[i].style.display = display;
+    content[i].classList.add(activeClass);
+  }
+  hideTabContent();
+  showTabContent();
+  header.addEventListener("click", e => {
+    const target = e.target;
+    if (target && (target.classList.contains(tabSelector.replace(/\./, "")) || target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
+      tab.forEach((item, i) => {
+        if (target == item || target.parentNode == item) {
+          hideTabContent();
+          showTabContent(i);
+        }
+        if (i == 3) {
+          Object(_progresBar__WEBPACK_IMPORTED_MODULE_0__["default"])("#HTML5", 95);
+          Object(_progresBar__WEBPACK_IMPORTED_MODULE_0__["default"])("#CSS3", 85);
+          Object(_progresBar__WEBPACK_IMPORTED_MODULE_0__["default"])("#JavaScript", 80);
+          Object(_progresBar__WEBPACK_IMPORTED_MODULE_0__["default"])("#ReactJS", 75);
+          Object(_progresBar__WEBPACK_IMPORTED_MODULE_0__["default"])("#Redux", 70);
+        }
+      });
+    }
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (tabs);
 
 /***/ })
 
