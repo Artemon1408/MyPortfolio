@@ -343,7 +343,6 @@ const slider = (slides, next) => {
         });
       });
     } catch (e) {}
-    console.log(slideIndex);
   }
   showSlides(slideIndex);
   function plusSlides(n) {
@@ -351,12 +350,10 @@ const slider = (slides, next) => {
   }
   let firstPos = null;
   function handleTouchStart(e) {
-    e.preventDefault();
     const firstTouch = e.touches[0];
     firstPos = firstTouch.clientX;
   }
   function handleTouchMove(e) {
-    e.preventDefault();
     if (!firstPos) {
       return false;
     }
